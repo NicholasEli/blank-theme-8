@@ -1,0 +1,32 @@
+#  Global library
+global:
+  version: 1.x
+  css:
+    theme:
+      css/style.css: { weight: -1 }
+
+  js:
+    js/script.js: { scope: footer, weight: -1 }
+  dependencies:
+    #- core/jquery
+    - core/drupal.ajax
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery.once
+    #- core/modernizr 
+
+#Vendor Library
+#vendor:
+  #version: 1.x
+  #js:
+    #js/script.js: { scope: footer, weight: -1 }
+
+
+# Front Page Library
+#front-page:
+  #version: 1.x
+  #css:
+    #theme:
+      #styles/vendor/VENDOR_NAME.css: { weight: -2 }
+  #js:
+    #scripts/vendor/VENDOR_NAME.js: { scope: footer, weight: -7 }

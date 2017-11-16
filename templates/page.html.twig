@@ -1,0 +1,46 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a single Drupal page.
+ */
+ #}
+{% include directory ~ '/templates/includes/header.html.twig' %}
+
+<!-- drupal standard blocks -->
+    
+    {{ messages }}
+    {% if page.help %}
+      <div class="help">
+        {{ page.help }}
+      </div>
+    {% endif %}
+    {% if action_links %}
+      <ul class="action-links">
+        {{ action_links }}
+      </ul>
+    {% endif %}
+
+    {% if secondary_local_tasks %}
+      <div class="tabs-secondary clearfix" role="navigation">{{ secondary_local_tasks }}</div>
+    {% endif %}
+
+    {{ title_prefix }}
+    {% if title %}
+      <h1 class="page-title">{{ title }}</h1>
+    {% endif %}
+    {{ title_suffix }}
+    {% if primary_local_tasks %}
+      {{ primary_local_tasks }}
+    {% endif %}
+
+    {{ page.content }}
+    {% if logged_in %}
+      {% if node.nid.value %}
+        <a href="{{url('<front>')}}node/{{node.nid.value}}/edit" target="_blank">Edit Page</a>
+      {% endif %}
+      <a href="{{url('<front>')}}user">Dashboard</a>
+      <a href="{{url('<front>')}}user/logout">Logout</a>
+    {% endif %}
+
+<!-- end drupal standard blocks -->
+{% include directory ~ '/templates/includes/footer.html.twig' %}

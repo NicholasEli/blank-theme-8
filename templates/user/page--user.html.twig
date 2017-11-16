@@ -1,0 +1,11 @@
+{% include directory ~ '/templates/includes/header.html.twig' %}
+{% if logged_in %}
+	<main id="user-dashboard">
+		<!--{{ drupal_view('view_name', 'view_type') }}-->
+	</main>
+{% else %}
+	<div id="login-form">
+		{{login_form}}
+	</div>
+{% endif %}
+{% include directory ~ '/templates/includes/footer.html.twig' %}

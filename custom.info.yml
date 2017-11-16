@@ -1,0 +1,20 @@
+name: Custom
+type: theme
+description: Drupal 8 Theme
+version: 1.0.0
+core: 8.x
+#screenshot: images/screenshot.png
+libraries:
+ - custom/global
+ - custom/vendor
+
+stylesheets-remove:
+  #- core/assets/vendor/normalize-css/normalize.css
+  #- core/modules/system/css/system.theme.css
+
+regions:
+  content: Content
+  navigation: Navigation
+  banner: 'Home Banner'  
+  #region_one: 'Region One'
+  footer: Footer
