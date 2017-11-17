@@ -19,7 +19,7 @@ $route = \Drupal::routeMatch()->getRouteName();
  /*
 function custom_css_alter(&$css) {
   // Add Google fonts.
-  $theme_path = drupal_get_path('theme', 'greenbanks');
+  $theme_path = drupal_get_path('theme', 'custom');
   $googlefonts = '//fonts.googleapis.com/css?family=Montserrat:700|Roboto:400,100,300,500,700,900';
   $css[$googlefonts] = array(
     'data' => $googlefonts,
@@ -40,7 +40,7 @@ function custom_css_alter(&$css) {
 function custom_preprocess_page(&$variables) {
   // Load this library only on front page.
   if ($variables['is_front']) {
-    $variables['#attached']['library'][] = 'greenbanks/front-page';
+    $variables['#attached']['library'][] = 'custom/front-page';
   }
 
   $variables['login_form'] = FALSE;
