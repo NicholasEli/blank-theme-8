@@ -1,0 +1,17 @@
+<?php
+function custom_theme_preprocess_page(&$variables) {
+  // Load this library only on front page.
+  if ($variables['is_front']) {
+    $variables['#attached']['library'][] = 'custom/front-page';
+  }
+
+  $variables['login_form'] = FALSE;
+  if (!\Drupal::currentUser()->id()) {
+    $form = Drupal::formBuilder()->getForm(Drupal\user\Form\UserLoginForm::class) ; 
+    $render = Drupal::service('renderer');
+    $variables['login_form'] = $render->renderPlain($form);
+  }
+
+  //render with {{login_form}}
+
+}

@@ -1,0 +1,16 @@
+name: Custom Theme
+type: theme
+base theme: classy
+description: Custom Drupal 8 Theme
+core: 8.x
+version: '1.0.0'
+project: 'custom_theme'
+libraries:
+  #- custom/global
+  #- custom/vendor
+regions:
+  content: Content
+  front_page_slideshow: 'Front Page Slideshow'
+  nav: Navigation
+  #region_one: 'Region One'
+  footer: Footer

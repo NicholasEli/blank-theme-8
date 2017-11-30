@@ -1,7 +1,7 @@
 {
   "name": "gulp-starter",
-  "version": "1.0.0",
-  "description": "Custom theme gulp dependencies",
+  "version": "2.0.0",
+  "description": "Static project build kit.",
   "main": "gulpfile.js",
   "dependencies": {
     "gulp-autoprefixer": "^3.1.0",
@@ -21,6 +21,6 @@
     "gulp-uglify": "^1.4.2",
     "gulp-uglifycss": "^1.0.4"
   },
-  "author": "SingleMind",
+  "author": "Nicholas By Design",
   "license": "MIT"
 }

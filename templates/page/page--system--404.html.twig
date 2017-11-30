@@ -1,5 +1,12 @@
 {% include directory ~ '/templates/includes/header.html.twig' %}
 <main id="page-404">
-
+	<section id="page-404-header">
+		<h6 class="section__header section__header--accent5">Page Not Fount</h6>
+	</section>
+	<section id="info">
+		<div class="content__panel">
+			<p class="h5">The page you are looking for could not be found. Would you like to return to the <a href="{{url('<front>')}}">homepage?</a></p>
+		</div>
+	</section>
 </main>
 {% include directory ~ '/templates/includes/footer.html.twig' %}

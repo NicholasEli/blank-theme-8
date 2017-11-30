@@ -1,3 +1,4 @@
+
 {#
 /**
  * @file
@@ -29,26 +30,29 @@
  * @ingroup themeable
  */
 #}
-{%
+<!DOCTYPE html>
+<html{{ html_attributes }}>
+  <head>
+    <head-placeholder token="{{ placeholder_token|raw }}">
+    <title>{{ head_title|safe_join(' | ') }}</title>
+    <css-placeholder token="{{ placeholder_token|raw }}">
+    <js-placeholder token="{{ placeholder_token|raw }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="apple-touch-fullscreen" content="YES" />
+  </head>
+  {%
     set body_classes = [
         logged_in ? 'user-logged-in',
         not root_path ? 'path-frontpage' : 'path-' ~ root_path|clean_class,
         node_type ? 'node--type-' ~ node_type|clean_class,
     ]
-%}
-<!DOCTYPE html>
-<html{{ html_attributes }}>
-    <head>
-        <head-placeholder token="{{ placeholder_token|raw }}">
-        <title>{{ head_title|safe_join(' | ') }}</title>
-        <css-placeholder token="{{ placeholder_token|raw }}">
-        <js-placeholder token="{{ placeholder_token|raw }}">
-    </head>
-
-    <body{{ attributes.addClass(body_classes) }}>
-        {{ page_top }}
-        {{ page }}
-        {{ page_bottom }}
-        <js-bottom-placeholder token="{{ placeholder_token|raw }}">
-    </body>
+  %}
+  <body{{ attributes.addClass(body_classes) }}>
+    {{ page_top }}
+    {{ page }}
+    {{ page_bottom }}
+    <js-bottom-placeholder token="{{ placeholder_token|raw }}">
+  </body>
 </html>
+
